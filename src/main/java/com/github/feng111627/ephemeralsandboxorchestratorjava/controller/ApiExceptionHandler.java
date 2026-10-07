@@ -21,7 +21,8 @@ public class ApiExceptionHandler {
             SandboxErrorCode.QUOTA_EXCEEDED, HttpStatus.TOO_MANY_REQUESTS,
             SandboxErrorCode.NOT_OWNER, HttpStatus.FORBIDDEN,
             SandboxErrorCode.PROVISION_FAILED, HttpStatus.INTERNAL_SERVER_ERROR,
-            SandboxErrorCode.DUPLICATE_REQUEST_CONFLICT, HttpStatus.CONFLICT
+            SandboxErrorCode.DUPLICATE_REQUEST_CONFLICT, HttpStatus.CONFLICT,
+            SandboxErrorCode.TTL_EXCEEDED, HttpStatus.BAD_REQUEST
     );
 
     @ExceptionHandler(SandboxException.class)

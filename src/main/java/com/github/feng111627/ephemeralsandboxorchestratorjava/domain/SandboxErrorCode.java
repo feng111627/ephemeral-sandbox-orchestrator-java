@@ -9,5 +9,7 @@ public enum SandboxErrorCode {
     QUOTA_EXCEEDED,
     NOT_OWNER,
     PROVISION_FAILED,
-    DUPLICATE_REQUEST_CONFLICT
+    DUPLICATE_REQUEST_CONFLICT,
+    /** 有效期非法（非正数）或超过平台允许的最大时限 */
+    TTL_EXCEEDED
 }
