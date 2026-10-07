@@ -1,6 +1,7 @@
 package com.github.feng111627.ephemeralsandboxorchestratorjava.controller;
 
 import com.github.feng111627.ephemeralsandboxorchestratorjava.domain.Sandbox;
+import com.github.feng111627.ephemeralsandboxorchestratorjava.service.OwnerOverview;
 import com.github.feng111627.ephemeralsandboxorchestratorjava.service.SandboxService;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,5 +42,14 @@ public class SandboxController {
     @GetMapping("/{id}")
     public Sandbox get(@PathVariable String id) {
         return sandboxService.get(id);
+    }
+
+    /**
+     * 归属方名下总览：GET /api/sandboxes/overview?owner=team-a
+     * 返回在用/已结束环境列表与配额上限、已用、剩余。
+     */
+    @GetMapping("/overview")
+    public OwnerOverview overview(@RequestParam String owner) {
+        return sandboxService.getOverview(owner);
     }
 }
